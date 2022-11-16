@@ -1,0 +1,88 @@
+﻿@model WebAppautomovel3.Models.Item
+
+@{
+    ViewBag.Title = "Details";
+    ViewBag.qt=1;
+}
+
+<h2>Detalhes</h2>
+
+@using (Html.BeginForm("AddItem","Automoveis"))
+{
+<div>
+    <h4>Automovel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+       
+        <dt>
+            @Html.DisplayNameFor(model => model.Automovel.Foto)
+        </dt>
+
+        <dd>
+            <img src="@Model.Automovel.Foto" class="img-responsive" />
+            <input type="hidden" id="id" name="id" value="@Model.Automovel.IdAutomovel"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Automovel.Modelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Automovel.Modelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Automovel.Serie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Automovel.Serie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Automovel.Cor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Automovel.Cor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Automovel.Ano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Automovel.Ano)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Automovel.Valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Automovel.Valor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Automovel.Motor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Automovel.Motor)
+        </dd>
+
+        <dt>
+            Quantidade
+        </dt>
+
+        <dd>
+            @Html.EditorFor(model =>model.Quantidade)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Automovel.IdAutomovel }, new {@class="btn btn-warning" }) |
+   <input type="submit" value="Carrinho" class="btn btn-success"/> |
+    @Html.ActionLink("Voltar para lista", "Index", null, new { @class = "btn btn-default" })
+</p>
+}
